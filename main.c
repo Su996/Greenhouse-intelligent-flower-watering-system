@@ -8,7 +8,7 @@
 #include <constant.h>       //include definitions and virables.
 #include <dht11.h>          //For Greenhouse Tempreture and Humidity detection.
 #include <buzzer.h>         //For alarm system.
-#include <SoilMoisture.h>   //For Soil Moisture detection.
+#include <http.h>           //Data upload to the cloud by using http format.
 
 int main(void)
 {
