@@ -55,7 +55,7 @@ int main(void)
                 printf("Sensor data read ok!\n");
                 printf("temperature :%d.%d\n", temperature_bit,temperature_point_bit);
                 printf("humidity :%d.%d\n", humidity_bit,humidity_point_bit);
-                
+                http(temperature_bit, humidity_bit);
             }
             else
             {
