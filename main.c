@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 /*Custom library functions*/
-#include <constant.h>       //include definations and virables.
+#include <constant.h>       //include definitions and virables.
 #include <dht11.h>          //For Greenhouse Tempreture and Humidity detection.
 #include <buzzer.h>         //For alarm system.
 #include <SoilMoisture.h>   //For Soil Moisture detection.
