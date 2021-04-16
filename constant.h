@@ -14,8 +14,10 @@ typedef unsigned long uint32;
 
 /* dht11 Temp and Humi detection */
 uint32 databuf;
-int MaxHum = 60;
+int MaxHum = 20;
 int MaxTem = 25;
+int MaxHum = 60;
+int MaxTem = 10;
 long last;
 int humidity_bit;
 int temperature_bit;
