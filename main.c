@@ -62,7 +62,7 @@ int main(void)
                 printf("Sensor dosent ans!\n");
                 databuf = 0;
             }
-            if((humidity_bit>MaxHum)||(temperature_bit>MaxTem))
+            if(((humidity_bit>MaxHum)||(temperature_bit>MaxTem))||((humidity_bit<minHum)||(temperature_bit<minTem)))
             {
                 Beep(500);
                 printf("Beep\n");
