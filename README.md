@@ -131,9 +131,10 @@ Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from
 
 #### Troubleshooting
 
-
-
-
+#### Contributors
+Haoyuan Su(2289042S)
+Boxiang Ma(2549544M)
+Yijie Sun(2569607S)
 
 
 
