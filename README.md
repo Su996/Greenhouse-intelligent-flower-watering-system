@@ -129,9 +129,9 @@ bulabulabula~
 #### demo
 Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from seneor -> Raspberry Pi -> cloud server -> computer
 
-#### Troubleshooting
+### Troubleshooting
 
-#### Contributors
+### Contributors
 Haoyuan Su(2289042S)  
 Boxiang Ma(2549544M)  
 Yijie Sun(2569607S)  
