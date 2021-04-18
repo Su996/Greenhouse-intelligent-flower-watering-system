@@ -13,9 +13,9 @@ soilmoisture sensor
 buzzer  
 
 #### Supporting Software
-Qt creator
-Geany IDE(for C)
-Onenet cloud server
+Qt creator  
+Geany IDE(for C)  
+Onenet cloud server  
 
 #### Decompression and install libghttp library on raspberry Pi
 Zip file has been putted in project branch
