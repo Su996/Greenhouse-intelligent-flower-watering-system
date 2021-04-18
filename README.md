@@ -1,23 +1,23 @@
 # Greenhouse-intelligent-flower-watering-system
 
-## RTES project
-
+## About project
+------------------
 Our group is devoted to design a Greenhouse intelligent flower watering system based on Raspberry Pi. This system can real-time detect the environment parameters of Greenhouse and the humidity of soil. If the soil humidity is higher or lower than threshold, Raspberry Pi will control water pipe watering the plants. When greenhouse temperature is abnormal, the buzzer will be activated and send a message to user's e-mail. All the detecting(or detected) data will be sent to PC and be shown on a user Interface created by Qt.
 
-### Prerequisites
+## Prerequisites
 -------------------
-#### Supporting Hardware
+### Supporting Hardware
 Raspberry Pi 3b+  
 DHT11  
 soilmoisture sensor  
 buzzer  
 
-#### Supporting Software
+### Supporting Software
 Qt creator  
 Geany IDE(for C)  
 Onenet cloud server  
 
-#### Decompression and install libghttp library on raspberry Pi
+### Decompression and install libghttp library on raspberry Pi
 Zip file has been putted in project branch
 ```
 tar -xzvf libghttp-1.0.9.tar.gz
@@ -27,7 +27,7 @@ make
 make install
 ```
 
-#### Decompression and install wiringPi.h
+### Decompression and install wiringPi.h
 ```
 $ cd
 $ tar xfz wiringPi-98bcb20.tar.gz
@@ -35,10 +35,10 @@ $ cd wiringPi-98bcb20
 $ ./build
 ```
 
-### How to use
+## How to use
 ---------------
-#### detect and upload data on cloud server
-##### import
+### detect and upload data on cloud server
+#### import
 ```
 /*System library functions*/
 
@@ -53,7 +53,7 @@ $ ./build
 #include <http.h>           //Data upload to the cloud by using http format.
 ```
 
-##### set pin mode
+#### set pin mode
 ```
 pinMode(SoilPin,INPUT);
 pinMode(BeePin,OUTPUT);
@@ -61,13 +61,13 @@ pinMode(WaterPin,OUTPUT);
 pinMode(pinNumber, OUTPUT); // set DHT11 tempareture and humidity sensor
 ```
 
-##### Get greenhouse temprature and humidity data
+#### Get greenhouse temprature and humidity data
 ```
 readSensorData()
 ```
 readSensorData() is used to get greenhouse temprature and humidity data from DHT11 to Raspberry Pi
 
-##### Threshold and Buzzer
+#### Threshold and Buzzer
 ```
 Beep()
 ```
@@ -81,20 +81,20 @@ int minHum = 20;
 int minTem = 10;
 ```
 
-##### Soil humidity detection
+#### Soil humidity detection
 ```
 SoilPin()
 ```
 The soil humidity threshold is adjusted by knob on soil detector chip.
 When soil humidity below the limit, the detector DO will output low voltage signal.
 
-##### Watering system
+#### Watering system
 ```
 WaterPin()
 ```
 Water pin will output signal based on soil detector signal.
 The electric water valve will under control of water pin signal.
-##### data uploaded to cloud server
+#### data uploaded to cloud server
 ```
 http(temperature_bit, humidity_bit);
 ```
@@ -120,8 +120,8 @@ HTTP Request body example:
     "unit_symbol": "% " 
 } 
 ```
-#### QT UI interface design
-##### include
+### QT UI interface design
+#### include
 We create a Qt Widgets Application named "widget". In widget.cpp file include:
 ```
 #include <QDebug>
@@ -134,7 +134,7 @@ Because we need to call a python script to get data from Onenet cloud service, i
 ```
 #include <Python.h>
 ```
-##### python script "getdata.py"
+#### python script "getdata.py"
 Add a new python script into Qt project named "getdata.py".  
 Python has a package which can get real-time data from Onenet cloud service by using a unique API key and url (You can find them in Onenet web page after you add a device to your Onenet account).
 ```
@@ -165,7 +165,7 @@ def getRH():
 def getTMP():
     return TMP
 ```
-##### widget.cpp
+#### widget.cpp
 Set a decent UI first.
 
 Qt has a useful class "QTimer". It can help us do real-time monitor. Connect a QTimer signal with repaint function, so when the time runs out, it calls repaint function and triggers paint event in Qt.
@@ -175,13 +175,13 @@ connect(timer, SIGNAL(timeout()), this, SLOT(repaint()));
 timer->start(2000);  #2000ms
 ```
 Rewrite paint event in Qt. Everytime the UI repaint, paint event function gets latest data from Onenet cloud and show it.
-#### demo
+### demo
 Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from seneor -> Raspberry Pi -> cloud server -> computer
 
-### Troubleshooting
+## Troubleshooting
 -------------------
 
-### Contributors
+## Contributors
 -----------------
 Haoyuan Su(2289042S)  
 Boxiang Ma(2549544M)  
