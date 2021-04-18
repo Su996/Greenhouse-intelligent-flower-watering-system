@@ -50,7 +50,26 @@ pinMode(WaterPin,OUTPUT);
 pinMode(pinNumber, OUTPUT); // set DHT11 tempareture and humidity sensor
 ```
 
-##### set pin mode
+##### Get greenhouse temprature and humidity data
+```
+readSensorData()
+```
+readSensorData() is used to get greenhouse temprature and humidity data from DHT11 to Raspberry Pi
+
+##### Threshold and Buzzer
+```
+Beep()
+```
+Beep(ms) is used to control buzzer to beep
+When the temprature and humidity data is over the threshold, beep() will run.
+The threshold is shown below:
+```
+int MaxHum = 60;
+int MaxTem = 25;
+int minHum = 20;
+int minTem = 10;
+```
+
 
 
 
