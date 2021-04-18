@@ -134,6 +134,47 @@ Because we need to call a python script to get data from Onenet cloud service, i
 ```
 #include <Python.h>
 ```
+##### python script "getdata.py"
+Add a new python script into Qt project named "getdata.py".  
+Python has a package which can get real-time data from Onenet cloud service by using a unique API key and url (You can find them in Onenet web page after you add a device to your Onenet account).
+```
+import urllib.request
+
+API_KEY='gnzeKv***************UWtw='        #API key of our device
+def http_get_data():
+    url='http://api.heclouds.com/devices/686117008/datapoints'  #url of our Onenet cloud service
+    request = urllib.request.Request(url)
+    request.add_header('api-key',API_KEY)
+    request.get_method = lambda:'GET'           # Set HTTP method
+    request = urllib.request.urlopen(request)
+    return request.read()
+post = str(http_get_data())
+```
+"post" is a string that contains your latest data on Onenet.  
+Then extract the data we want (in this case, humidity and temperature) from "post" and save in "RH" and "TMP" as integer:
+```
+RH=post.split('datapoints":')[1].split('"value":')[1].split('}')[0]
+TMP=post.split('datapoints":')[2].split('"value":')[1].split('}')[0]
+RH = int(RH)
+TMP = int(TMP)
+```
+Define two functions to get the return value in widget.cpp:
+```
+def getRH():
+    return RH
+def getTMP():
+    return TMP
+```
+##### widget.cpp
+Set a decent UI first.
+
+Qt has a useful class "QTimer". It can help us do real-time monitor. Connect a QTimer signal with repaint function, so when the time runs out, it calls repaint function and triggers paint event in Qt.
+```
+QTimer *timer = new QTimer(this);
+connect(timer, SIGNAL(timeout()), this, SLOT(repaint()));
+timer->start(2000);  #2000ms
+```
+Rewrite paint event in Qt. Everytime the UI repaint, paint event function gets latest data from Onenet cloud and show it.
 #### demo
 Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from seneor -> Raspberry Pi -> cloud server -> computer
 
