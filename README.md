@@ -7,10 +7,10 @@ Our group is devoted to design a Greenhouse intelligent flower watering system b
 ### Prerequisites
 -------------------
 #### Supporting Hardware
-Raspberry Pi 3b+
-DHT11
-soilmoisture sensor
-buzzer
+Raspberry Pi 3b+  
+DHT11  
+soilmoisture sensor  
+buzzer  
 
 #### Supporting Software
 Qt creator
