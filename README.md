@@ -33,6 +33,9 @@ $ cd wiringPi-98bcb20
 $ ./build
 ```
 ## How to use
+Setup hardware as below: 
+
+Run main.c on the raspberry Pi and run。
 ## Code Description
 ### detect and upload data on cloud server
 #### import
@@ -172,8 +175,7 @@ connect(timer, SIGNAL(timeout()), this, SLOT(repaint()));
 timer->start(2000);  #2000ms
 ```
 Rewrite paint event in Qt. Everytime the UI repaint, paint event function gets latest data from Onenet cloud and show it.
-### demo
-Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from seneor -> Raspberry Pi -> cloud server -> computer
+
 
 ## Troubleshooting
 
@@ -181,10 +183,3 @@ Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from
 Haoyuan Su(2289042S)  
 Boxiang Ma(2549544M)  
 Yijie Sun(2569607S)  
-
-
-
-
-
-
-
