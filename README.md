@@ -122,10 +122,18 @@ HTTP Request body example:
 ```
 #### QT UI interface design
 ##### include
+We create a Qt Widgets Application named "widget". In widget.cpp file include:
 ```
-bulabulabula~
+#include <QDebug>
+#include <QApplication>
+#include <iostream>
+#include <QTimer>
+#include <QPixmap>
 ```
-
+Because we need to call a python script to get data from Onenet cloud service, include:
+```
+#include <Python.h>
+```
 #### demo
 Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from seneor -> Raspberry Pi -> cloud server -> computer
 
