@@ -85,7 +85,15 @@ int minTem = 10;
 ```
 SoilPin()
 ```
+The soil humidity threshold is adjusted by knob on soil detector chip.
+When soil humidity below the limit, the detector DO will output low voltage signal.
 
+##### Watering system
+```
+WaterPin()
+```
+Water pin will output signal based on soil detector signal.
+The electric water valve will under control of water pin signal.
 ##### data uploaded to cloud server
 ```
 http(temperature_bit, humidity_bit);
