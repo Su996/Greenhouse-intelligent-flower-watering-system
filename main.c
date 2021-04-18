@@ -80,7 +80,7 @@ int main(void)
         if(digitalRead(SoilPin)==LOW)
         {
             digitalWrite(WaterPin,HIGH);
-            printf("soil....\n");
+            printf("activate watering system\n");
         }
         else
         {
