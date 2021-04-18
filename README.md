@@ -6,6 +6,17 @@ Our group is devoted to design a Greenhouse intelligent flower watering system b
 
 ### Prerequisites
 -------------------
+#### Supporting Hardware
+Raspberry Pi 3b+
+DHT11
+soilmoisture sensor
+buzzer
+
+#### Supporting Software
+Qt creator
+Geany IDE(for C)
+Onenet cloud server
+
 #### Decompression and install libghttp library on raspberry Pi
 Zip file has been putted in project branch
 ```
@@ -69,6 +80,48 @@ int MaxTem = 25;
 int minHum = 20;
 int minTem = 10;
 ```
+
+##### Soil humidity detection
+```
+SoilPin()
+```
+
+##### data uploaded to cloud server
+```
+http(temperature_bit, humidity_bit);
+```
+Using HTTP protocol to send HTTP messages to the cloud server
+Request method: Post
+Example of HTTP request header:
+```
+POST http://api.heclouds.com/devices/’device ID’/datastreams HTTP/1.1
+```
+HTTP Request body example:
+```
+{ 
+    "id": "TMP", 
+    "tags": ["temperature"], 
+    "unit": "centigrade", 
+    "unit_symbol": " ℃ " 
+} 
+
+{ 
+    "id": "RH", 
+    "tags": ["humidity"], 
+    "unit": "percentage", 
+    "unit_symbol": "% " 
+} 
+```
+#### QT UI interface design
+##### include
+```
+bulabulabula~
+```
+
+#### demo
+Run main.c on the raspberry Pi and 加QT的代码啥的。 to make the data from seneor -> Raspberry Pi -> cloud server -> computer
+
+#### Troubleshooting
 
 
 
