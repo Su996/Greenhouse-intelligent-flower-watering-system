@@ -32,8 +32,8 @@ $ tar xfz wiringPi-98bcb20.tar.gz
 $ cd wiringPi-98bcb20
 $ ./build
 ```
-
 ## How to use
+## Code Description
 ### detect and upload data on cloud server
 #### import
 ```
