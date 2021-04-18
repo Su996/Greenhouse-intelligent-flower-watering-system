@@ -34,7 +34,7 @@ $ ./build
 ```
 ## How to use
 Setup hardware as below: 
-
+![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/Flowchart.jpg)
 Run main.c on the raspberry Pi and run。
 ## Code Description
 ### detect and upload data on cloud server
