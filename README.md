@@ -53,7 +53,7 @@ mingw23-make
 Monitor.exe
 ```
 ##### Important Notice:  
-1) Please place python script "getdata.py" under build and debug folder, mine is:  
+1) Please place python script "getdata.py" under build and debug folder, mine is:
 ```
 E:\Eric\Qt files\build-Monitor-Desktop_Qt_5_9_9_MinGW_32bit-Debug
 ```
