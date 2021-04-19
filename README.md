@@ -33,8 +33,7 @@ $ cd wiringPi-98bcb20
 $ ./build
 ```
 ## How to use
-Setup hardware as below:  
-
+For hardware setup please see main/image/Hardware Setup.jpg.   
 Dataflow diagram:  
 ![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/Flowchart.jpg)  
 
