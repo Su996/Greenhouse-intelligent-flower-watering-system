@@ -36,13 +36,10 @@ $ ./build
 Setup hardware as below: 
 ![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/Flowchart.jpg)  
 
-Sign up an account for Onenet cloud service: https://open.iot.10086.cn/passport/login/
-Create a HTTP protocol interface and add the device
-Here is the url and API key of your device: Device list -> Device details
-```
-char *uri = "http://api.heclouds.com/devices/686117008/datapoints";
-char *APIKEY = "gnzeKvd5HGejpFUHOCW2FspUWtw=";
-```
+Sign up an account for Onenet cloud service: https://open.iot.10086.cn/passport/login/  
+Create a HTTP protocol interface and add the device  
+Here is the url and API key of your device: Device list -> Device details  
+
 Run main.c on the raspberry Pi.   
 Python3 is required, also make sure python install urllib and import it:
 ```
