@@ -7,7 +7,7 @@ void Beep(int interval)
     
     if((millis()-last)>interval)
     {
-        digitalWrite(BeePin,!digitalRead(BeePin));
-        last = millis();
+         digitalWrite(BeePin,!digitalRead(BeePin));
+         last = millis();
     }
 }
