@@ -52,7 +52,7 @@ qmake
 mingw23-make
 Monitor.exe
 ```
-Important Notice:  
+##### Important Notice:  
 1) Please place python script "getdata.py" under build and debug folder, mine is  
 ```
 E:\Eric\Qt files\build-Monitor-Desktop_Qt_5_9_9_MinGW_32bit-Debug
@@ -80,6 +80,7 @@ typedef struct{
     #define slots Q_SLOTS  /* add here */
 } PyType_Spec;
 ```
+3) Also if you want, please change direction of "logo.jpg", it's in widget.cpp line 46. You can place any logo you like.
 ## Code Description
 ### detect and upload data on cloud server
 #### import
