@@ -33,11 +33,15 @@ $ cd wiringPi-98bcb20
 $ ./build
 ```
 ## How to use
-Setup hardware as below: 视频截图有点糊  
+Setup hardware as below: 
 ![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/Flowchart.jpg)  
-Sign up an account for Onenet cloud service:网站  
+Sign up an account for Onenet cloud service: https://open.iot.10086.cn/develop/http/product/#/general?pid=405307
 
-Here is the url and API key of your device:整个截图  
+Here is the url and API key of your device:
+```
+char *uri = "http://api.heclouds.com/devices/686117008/datapoints";
+char *APIKEY = "gnzeKvd5HGejpFUHOCW2FspUWtw=";
+```
 Run main.c on the raspberry Pi.   
 Python3 is required, also make sure python install urllib and import it:
 ```
