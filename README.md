@@ -256,3 +256,9 @@ Turn two integer into string and set label text, Now we can see what is going on
 Haoyuan Su(2289042S)  
 Boxiang Ma(2549544M)  
 Yijie Sun(2569607S)  
+## Contact
+Any problems please contact us by:  
+##### E-mail:   
+2289042S@student.gla.ac.uk  
+2549544M@student.gla.ac.uk  
+2569607S@student.gla.ac.uk  
