@@ -252,7 +252,9 @@ Also use PyObject to get the return value:
 Turn two integer into string and set label text, Now we can see what is going on of our plant!
 ## Troubleshooting  
 ## Demo Video  
-[Youtube link](https://www.youtube.com/watch?v=HXzGJQKPKak)
+[Youtube link](https://www.youtube.com/watch?v=HXzGJQKPKak)  
+## License  
+Distributed under the GPL-3.0 License. See [LICENSE](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/LICENSE) for more information.
 
 ## Contributors
 Haoyuan Su(2289042S)  
