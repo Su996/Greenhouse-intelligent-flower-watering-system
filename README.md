@@ -33,9 +33,17 @@ $ cd wiringPi-98bcb20
 $ ./build
 ```
 ## How to use
-Setup hardware as below: 
-![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/Flowchart.jpg)
-Run main.c on the raspberry Pi and run。
+Setup hardware as below: 视频截图有点糊  
+![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/Flowchart.jpg)  
+Sign up an account for Onenet cloud service:网站  
+
+Here is the url and API key of your device:整个截图  
+
+Python3 is required, make sure python install urllib and import it:
+```
+import urllib.request
+```
+Run main.c on the raspberry Pi.  
 ## Code Description
 ### detect and upload data on cloud server
 #### import
