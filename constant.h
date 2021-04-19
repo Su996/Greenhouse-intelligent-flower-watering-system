@@ -7,10 +7,10 @@ typedef unsigned long uint32;
  
 /* WiringPi Pin Setup */
 #define HIGH_TIME 32
-#define SoilPin 0
+#define SoilPin  0
 #define pinNumber 1
-#define BeePin 2
-#define WaterPin 3
+#define BeePin  2
+#define WaterPin  3
 
 /* dht11 Temp and Humi detection */
 uint32 databuf;
