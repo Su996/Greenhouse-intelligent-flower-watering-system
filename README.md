@@ -262,3 +262,6 @@ Any problems please contact us by:
 2289042S@student.gla.ac.uk  
 2549544M@student.gla.ac.uk  
 2569607S@student.gla.ac.uk  
+##### Twitter:  
+[Twitter](https://twitter.com/SystemWatering)  
+![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/images/twitter.png)
