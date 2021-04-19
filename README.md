@@ -39,11 +39,19 @@ Sign up an account for Onenet cloud service:网站
 
 Here is the url and API key of your device:整个截图  
 
-Python3 is required, make sure python install urllib and import it:
+Python3 is required, also make sure python install urllib and import it:
 ```
 import urllib.request
 ```
 Run main.c on the raspberry Pi.  
+As for Qt project, you can:  
+1) Open Monitor.pro with Qt Creator (version 5.9 or higher) and run the project.
+2) Use qmake and mingw32-make to build the project, it will produce an executable file under release, run it.
+```
+qmake
+mingw23-make
+Monitor.exe
+```
 ## Code Description
 ### detect and upload data on cloud server
 #### import
