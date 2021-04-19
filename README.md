@@ -252,7 +252,7 @@ Also use PyObject to get the return value:
 Turn two integer into string and set label text, Now we can see what is going on of our plant!
 ## Troubleshooting  
 ## Demo Video  
-[Youtube link]()
+[Youtube link](https://www.youtube.com/watch?v=HXzGJQKPKak)
 
 ## Contributors
 Haoyuan Su(2289042S)  
