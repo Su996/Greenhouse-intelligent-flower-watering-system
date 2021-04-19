@@ -53,13 +53,8 @@ mingw23-make
 Monitor.exe
 ```
 ##### Important Notice:  
-1) Please place python script "getdata.py" under build and debug folder, mine is:
-```
-E:\Eric\Qt files\build-Monitor-Desktop_Qt_5_9_9_MinGW_32bit-Debug
-```
-You can also right click project in Qt Creator and select add existing file (file above) into the project.  
-2) Must undefine "slots" in object.h which you can find under "include" folder of python directory. You can find the following code in line 201-207 (python3.9.4). 
-3) 
+1) Please place python script "getdata.py" under build and debug folder, mine is
+2) Must undefine "slots" in object.h which you can find under "include" folder of python directory. You can find the following code in line 201-207 (python3.9.4).
 ```
 typedef struct{
     const char* name;
