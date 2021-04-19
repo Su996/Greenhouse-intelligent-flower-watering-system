@@ -45,10 +45,6 @@ Run main.c on the raspberry Pi.
 ```
 ./main
 ```
-Python3 is required, also make sure python install urllib and import it:
-```
-import urllib.request
-```
 For Qt project, you can:  
 1) Open Monitor.pro with Qt Creator (version 5.9 or higher) and run the project.  
 2) Use qmake and mingw32-make to build the project, it will produce an executable file under “release” folder, run it.
@@ -58,13 +54,21 @@ mingw23-make
 release/Monitor.exe
 ```
 ##### Important Notice:  
-1) Please place python script "getdata.py" under build and debug folder, mine is
+1) Python3 is required, also make sure python get urllib installed. Before run Qt project, please find your python direction and change line 36-40 in Monitor.pro file. 
+```
+INCLUDEPATH +=E:\Python3.9\include   ############# python enviroment
+LIBS += -LE:\Python3.9\libs\
+-l_tkinter\
+-lpython3\
+-lpython39
+```
+2) Please place python script "getdata.py" under build and debug folder, mine is
 ```
 E:\Eric\Qt files\build-Monitor-Desktop_Qt_5_9_9_MinGW_32bit-Debug
 ```
 You can also right click project in Qt Creator and select add existing file (file above) into the project.  
   
-2) Must undefine "slots" in object.h which you can find under "include" folder of python directory. You can find the following code in line 201-207 (python3.9.4).
+3) Must undefine "slots" in object.h which you can find under "include" folder of python directory. You can find the following code in line 201-207 (python3.9.4).
 ```
 typedef struct{
     const char* name;
@@ -86,7 +90,7 @@ typedef struct{
     #define slots Q_SLOTS  /* add here */
 } PyType_Spec;
 ```
-3) Also if you want, please change direction of "logo.jpg", it's in widget.cpp line 46. You can place any logo you like.
+4) Also if you want, please change direction of "logo.jpg", it's in widget.cpp line 46. You can place any logo you like.
 ## Code Description
 ### detect and upload data on cloud server
 #### import
