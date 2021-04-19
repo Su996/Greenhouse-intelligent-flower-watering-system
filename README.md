@@ -52,6 +52,34 @@ qmake
 mingw23-make
 Monitor.exe
 ```
+Important Notice:  
+1) Please place python script "getdata.py" under build and debug folder, mine is  
+```
+E:\Eric\Qt files\build-Monitor-Desktop_Qt_5_9_9_MinGW_32bit-Debug
+```
+You can also right click project in Qt Creator and select add existing file (file above) into the project.
+2) Must undefine "slots" in object.h which you can find under "include" folder of python directory. You can find the following code in line 201-207 (python3.9.4)  
+```
+typedef struct{
+    const char* name;
+    int basicsize;
+    int itemsize;
+    unsigned int flags;
+    PyType_Slot *slots; /* terminated by slot==0. */
+} PyType_Spec;
+```
+Turn it to:  
+```
+typedef struct{
+    const char* name;
+    int basicsize;
+    int itemsize;
+    unsigned int flags;
+    #undef slots  /* add here */
+    PyType_Slot *slots; /* terminated by slot==0. */
+    #define slots Q_SLOTS  /* add here */
+} PyType_Spec;
+```
 ## Code Description
 ### detect and upload data on cloud server
 #### import
@@ -190,9 +218,27 @@ QTimer *timer = new QTimer(this);
 connect(timer, SIGNAL(timeout()), this, SLOT(repaint()));
 timer->start(2000);  #2000ms
 ```
-Rewrite paint event in Qt. Everytime the UI repaint, paint event function gets latest data from Onenet cloud and show it.
-
-
+Rewrite paint event in Qt. Everytime the UI repaint, paint event function gets latest data from Onenet cloud and show it.  
+The following functions are used for calling python script. Use PyObject to achieve all we need.
+```
+void Widget::paintEvent(QPaintEvent *ev)
+{
+    Py_Initialize();
+    ...
+    PyObject* pModule = PyImport_ImportModule("getdata");  // getdata.py is the python script
+    ...
+    PyObject* pFungetRH= PyObject_GetAttrString(pModule,"getRH");  // function in python script
+    PyObject* pFungetTMP= PyObject_GetAttrString(pModule,"getTMP");
+```
+Also use PyObject to get the return value:  
+```
+    PyObject* v1 = PyObject_CallFunction(pFungetRH,NULL);
+    PyObject* v2 = PyObject_CallFunction(pFungetTMP,NULL);
+    int RH,TMP;
+    PyArg_Parse(v1, "i", &RH);
+    PyArg_Parse(v2, "i", &TMP);  // now we get two integer RH and TMP
+```
+Turn two integer into string and set label text, Now we can see what is going on of our plant!
 ## Troubleshooting
 
 ## Contributors
