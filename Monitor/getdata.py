@@ -9,7 +9,7 @@ def http_get_data():
     url='http://api.heclouds.com/devices/686117008/datapoints'
     request = urllib.request.Request(url)
     request.add_header('api-key',API_KEY)
-    request.get_method = lambda:'GET'           # 设置HTTP的访问方式
+    request.get_method = lambda:'GET'           # set http method
     request = urllib.request.urlopen(request)
     return request.read()
 post = str(http_get_data())
