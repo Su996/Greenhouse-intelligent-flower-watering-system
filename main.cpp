@@ -10,10 +10,13 @@
 #include <buzzer.h>         //For alarm system.
 #include <http.h>           //Data upload to the cloud by using http format.
 
+using namespace std;
+
 int main(void)
 {
     FILE *TMP = NULL;
     FILE *HUMIDITY = NULL;
+    cout << "Hello, world!" << endl
     printf("PIN:%d\n", pinNumber);
     int humidity_bit;
     int humidity_point_bit;
