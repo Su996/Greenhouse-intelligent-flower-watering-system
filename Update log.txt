@@ -1,0 +1,3 @@
+Date 6.30
+
+Transfer some code From C to C++
