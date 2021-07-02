@@ -1,3 +1,7 @@
 Date 6.30
 
 Transfer some code From C to C++
+
+Date 7.2
+
+Transfer some code From C to C++
