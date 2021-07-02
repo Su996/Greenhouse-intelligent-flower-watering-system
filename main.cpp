@@ -3,6 +3,7 @@
 #include <wiringPi.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream.h>
 
 /*Custom library functions*/
 #include <constant.h>       //include definitions and virables.
@@ -16,8 +17,7 @@ int main(void)
 {
     FILE *TMP = NULL;
     FILE *HUMIDITY = NULL;
-    cout << "Hello, world!" << endl
-    printf("PIN:%d\n", pinNumber);
+    cout << "PIN:" << pinNumber << endl
     int humidity_bit;
     int humidity_point_bit;
     int temperature_bit;
