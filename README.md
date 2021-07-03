@@ -12,7 +12,7 @@ buzzer
 
 ### Supporting Software
 Qt creator  
-Geany IDE(for C)  
+Geany IDE(for C++ and C)  
 Onenet cloud server  
 
 ### Decompression and install libghttp library on raspberry Pi
