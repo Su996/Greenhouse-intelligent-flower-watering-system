@@ -13,29 +13,38 @@
 
 using namespace std;
 
+class para
+{
+   public:
+      int bit; 
+      int point_bit; 
+};
+
 int main(void)
 {
     FILE *TMP = NULL;
     FILE *HUMIDITY = NULL;
-    cout << "PIN:" << pinNumber << endl
-    int humidity_bit;
-    int humidity_point_bit;
-    int temperature_bit;
-    int temperature_point_bit;
+    cout << "PIN:" << pinNumber << endl;
+        
+    para temp;                          //temperature
+    para humi;                          //humidity
+    
     if (-1 == wiringPiSetup()) {
-        printf("Setup wiringPi failed!");
+        cout << "Setup wiringPi failed!" << endl;
         return 1;
     }
   
-    pinMode(pinNumber, OUTPUT); // set mode to output
+    pinMode(pinNumber, OUTPUT);    // set mode to output
     digitalWrite(pinNumber, HIGH); // output a high level 
     pinMode(SoilPin,INPUT);
     pinMode(BeePin,OUTPUT);
     digitalWrite(BeePin, LOW); 
     pinMode(WaterPin,OUTPUT);
     digitalWrite(WaterPin, LOW); 
-    printf("Starting...\n");
+    
+    cout << "Starting..." << endl;
     last = millis();
+    
     while (1) 
     {
         if (readSensorData())
@@ -47,43 +56,41 @@ int main(void)
             {
                 TMP = fopen("/home/pi/tempreture.txt", "w");
                 HUMIDITY = fopen("/home/pi/humidity.txt", "w");
-                humidity_bit = (databuf >> 24) & 0xff;
-                humidity_point_bit = (databuf >> 16) & 0xff;
-                temperature_bit = (databuf >> 8) & 0xff;
-                temperature_point_bit = databuf & 0xff;
-                fprintf(TMP, "%d",temperature_bit);
-                fprintf(HUMIDITY, "%d",humidity_bit);
+                humi.bit = (databuf >> 24) & 0xff;
+                humi.point_bit = (databuf >> 16) & 0xff;
+                temp.bit = (databuf >> 8) & 0xff;
+                temp.point_bit = databuf & 0xff;
+                fprintf(TMP, "%d",temp.bit);
+                fprintf(HUMIDITY, "%d",humi.bit);
                 fclose(TMP);
                 fclose(HUMIDITY);
-                printf("Sensor data read ok!\n");
-                printf("temperature :%d.%d\n", temperature_bit,temperature_point_bit);
-                printf("humidity :%d.%d\n", humidity_bit,humidity_point_bit);
-                http(temperature_bit, humidity_bit);
+                cout << "Sensor data read ok!" << endl;
+                cout << "temperature :" << temp.bit << "." << temp.point_bit << endl;
+                cout << "humidity :" << humi.bit << "." << humi.point_bit << endl;
+                http(temp.bit, humi.bit);
             }
             else
             {
-                printf("Sensor dosent ans!\n");
+                cout << "Sensor dosent ans!" << endl;
                 databuf = 0;
             }
-            if(((humidity_bit>MaxHum)||(temperature_bit>MaxTem))||((humidity_bit<minHum)||(temperature_bit<minTem)))
+            if(((humi.bit>MaxHum)||(temp.bit>MaxTem))||((humi.bit<minHum)||(temp.bit<minTem)))
             {
                 Beep(500);
-                printf("Beep\n");
+                cout << "Beep!" << endl;
             }
             else
             {
                 digitalWrite(BeePin, LOW); 
-                printf("Do Not Beep\n");
+                cout << "Do Not Beep!" << endl;
             }
-
             databuf = 0;
         }
-        
         
         if(digitalRead(SoilPin)==LOW)
         {
             digitalWrite(WaterPin,HIGH);
-            printf("activate watering system\n");
+            cout << "activate watering system" << endl;
         }
         else
         {
