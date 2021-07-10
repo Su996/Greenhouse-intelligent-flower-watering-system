@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
 
 /* this part need a external C library called libghttp.*/
 /* Downloaded at http://www.linuxfromscratch.org/blfs/view/5.1/gnome/libghttp.html */
@@ -34,7 +38,7 @@ int http(int temp, int humi)
 	strcat(part1, RH);
 	strcat(part1, end);
  
-	printf("%s\n", part1);		//test
+	cout << part1 << endl;
  
 	request = ghttp_request_new();
 	if (ghttp_set_uri(request, uri) == -1)
