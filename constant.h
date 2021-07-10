@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 typedef unsigned char uint8;
 typedef unsigned int  uint16;
