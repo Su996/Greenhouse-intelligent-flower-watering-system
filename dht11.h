@@ -1,6 +1,9 @@
 #include <wiringPi.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 uint32 databuf;
 /* This function is used to get the Temperature and Humidity data which has been saved in databuf and crc */
