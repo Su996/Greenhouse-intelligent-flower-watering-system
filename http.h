@@ -5,7 +5,7 @@
 
 using namespace std;
 
-/* this part need a external C library called libghttp.*/
+/* this part need a external C/C++ library called libghttp.*/
 /* Downloaded at http://www.linuxfromscratch.org/blfs/view/5.1/gnome/libghttp.html */
 
 #include <ghttp.h>
