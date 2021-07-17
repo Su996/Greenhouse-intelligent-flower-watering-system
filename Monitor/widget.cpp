@@ -5,7 +5,7 @@
 #include "ui_widget.h"
 #include <QDebug>
 #include <QApplication>
-#include <Python.h>
+
 #include <iostream>
 #include <QTimer>
 #include <QPixmap>
