@@ -1,4 +1,3 @@
-  
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
@@ -23,7 +22,7 @@ int http_get_data()
 	char TMP[8];
 	char RH[8]
 	int len;
-    
+	
     request = ghttp_request_new();
     if(ghttp_set_uri(request, uri) == -1)
        return -1;
