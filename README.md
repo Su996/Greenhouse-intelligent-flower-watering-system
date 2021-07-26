@@ -1,7 +1,7 @@
 # Greenhouse-intelligent-flower-watering-system  
 ![image](https://github.com/Su996/Greenhouse-intelligent-flower-watering-system/blob/main/images/Title.png)
 ## About project
-Our group is devoted to design a Greenhouse intelligent flower watering system based on Raspberry Pi. This system can real-time detect the environment parameters of Greenhouse and the humidity of soil. If the soil humidity is higher or lower than threshold, Raspberry Pi will control water pipe watering the plants. When greenhouse temperature is abnormal, the buzzer will be activated and send a message to user's e-mail. All the detecting(or detected) data will be sent to PC and be shown on a user Interface created by Qt.
+Our group is devoted to design a Greenhouse intelligent flower watering system based on Raspberry Pi. This system can real-time detect the environment parameters of Greenhouse and the humidity of soil. If the soil humidity is higher or lower than threshold, Raspberry Pi will control water pipe watering the plants. When greenhouse temperature is out of the standard range, the buzzer will be activated and send a message to user's e-mail. All the detecting(or detected) data will be sent to PC and be shown on a user Interface created by Qt.
 
 ## Prerequisites
 ### Supporting Hardware
@@ -140,7 +140,7 @@ int minTem = 10;
 ```
 SoilPin()
 ```
-The soil humidity threshold is adjusted by knob on soil detector chip.
+The soil humidity threshold is adjusted by knobing on soil detector chip.
 When soil humidity below the limit, the detector DO will output low voltage signal.
 
 #### Watering system
