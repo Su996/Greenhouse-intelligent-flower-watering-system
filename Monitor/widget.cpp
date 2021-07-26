@@ -84,7 +84,6 @@ void Widget::paintEvent(QPaintEvent *ev)
     PyArg_Parse(v1, "i", &RH);
     PyArg_Parse(v2, "i", &TMP);
     qDebug()<<RH<<','<<TMP;
-
     Py_Finalize();
 
     ui->label->setText(QString::number(RH)+"%");
