@@ -10,3 +10,8 @@ Date 7.3
 
 Finish transfer main.cpp
 And trend to delete <http.h> and replace with a C++ CGI library.
+
+Date 7.26
+
+Finish program instructions and optimize the program structure.
+Check the whole project and make sure to meet the request.
